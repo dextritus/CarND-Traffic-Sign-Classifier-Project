@@ -1,7 +1,5 @@
-#**Traffic Sign Recognition** 
+# **Traffic Sign Recognition** 
 
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
 
 ---
 
@@ -29,7 +27,7 @@ The goals / steps of this project are the following:
 [imgdonotenter]: ./german/ "Do not enter"
 
 ---
-###Data set
+### Data set
 
 The data sets consists of german traffic signs belonging to 43 different classes. There are 34799 training images, 4410 validation images and 12630 test images. Each image is an RGB image with the size of 32x32 pixels.
 
