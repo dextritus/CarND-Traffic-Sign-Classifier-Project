@@ -1,6 +1,5 @@
 #**Traffic Sign Recognition** 
 
-##Writeup Template
 
 ###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
 
@@ -16,27 +15,28 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-
 [//]: # (Image References)
+[before]: ./examples/before.jpg "Original image"
+[after]:  ./examples/after.jpg  "Nomalized image"
 
 [image1]: ./examples/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-
-## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+[img30]: ./examples/placeholder.png "Speed limit 30km/h"
+[imgyield]: ./german/placeholder.png "Yield"
+[imgahead]: ./german/placeholder.png "Ahead only"
+[imgpriority]: ./german/placeholder.png "Priority"
+[imgdonotenter]: ./german/ "Do not enter"
 
 ---
-###Writeup / README
+###Data set
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
+The data sets consists of german traffic signs belonging to 43 different classes. There are 34799 training images, 4410 validation images and 12630 test images. Each image is an RGB image with the size of 32x32 pixels.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+An example of a training image is shown below.
+
+![alt text][before]
+
 
 ###Data Set Summary & Exploration
 
