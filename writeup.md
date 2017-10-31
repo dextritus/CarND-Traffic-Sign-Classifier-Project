@@ -101,7 +101,7 @@ For the 5 images, the highest 5 softmax probabilities are:
 * Do not enter sign: [1.00, 7.1e-26, 4.5e-37, 2.27e-37, 0] for labels [17, 14, 40, 0, 1]
 * Ahead only sign:   [1, 6.5e-11, 3.48e-13, 3.57e-14, 9.95e-18] for labels [35, 36, 3, 34, 33] 
 
-For these particular images, the neural network was very confident on the labels of the images, as it is reflected on the highest softmax probabilities being as high as 99%.
+For these particular images, the neural network was very confident on the labels of the images, as it is reflected on the highest softmax probabilities being as high as 99%. Note however that the images are relatively clear, and it is expected that they do not to pose a major difficulty for the network.
 
 ## Summary
 
