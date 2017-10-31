@@ -86,7 +86,7 @@ The five images I chose are presented below, after being cropped to a 32x32 dime
 ![alt text][imgdonotenter]
 ![alt text][imgahead]
 
-These represent a speed limit sign (30km/h), a yield signs, a priority sign, a do not enter sign, and an ahead only sign.
+These represent a speed limit sign (30km/h), a yield sign, a priority sign, a do not enter sign, and an ahead only sign.
 
 Therefore, the lables for these 5 images are [1 13 12 17 35]. 
 The NN predicted all 5 images correctly, the logits being [1 13 12 17 35].
