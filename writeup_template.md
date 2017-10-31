@@ -74,7 +74,7 @@ The hyperparameters I chose were:
 
 To choose these parameters, I mainly played with the learning rate and batch size that results in a steady increase in validation accuracy, an plateaus somewhere around 94% percent. 
 
-The accuracty on the validation data is around 0.95. The accuracy with this network on the test data is 0.926.
+The accuracy on the validation data is around 0.95. The accuracy with this network on the test data is 0.926.
 
 ## Test the network on 5 new images
 
