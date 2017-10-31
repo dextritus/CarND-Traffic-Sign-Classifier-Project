@@ -20,14 +20,14 @@ The goals / steps of this project are the following:
 [image1]: ./examples/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
-[img30]: ./examples/placeholder.png "Speed limit 30km/h"
-[imgyield]: ./german/placeholder.png "Yield"
-[imgahead]: ./german/placeholder.png "Ahead only"
-[imgpriority]: ./german/placeholder.png "Priority"
-[imgdonotenter]: ./german/ "Do not enter"
+[img30]: ./german/30.jpg "Speed limit 30km/h"
+[imgyield]: ./german/yield.jpg "Yield"
+[imgahead]: ./german/oneway.jpg "Ahead only"
+[imgpriority]: ./german/rightaway.jpg "Priority"
+[imgdonotenter]: ./german/donotenter.jpg "Do not enter"
 
 ---
-### Data set
+## Data set
 
 The data sets consists of german traffic signs belonging to 43 different classes. There are 34799 training images, 4410 validation images and 12630 test images. Each image is an RGB image with the size of 32x32 pixels.
 
@@ -35,6 +35,54 @@ An example of a training image is shown below.
 
 ![alt text][before]
 
+### Data normalization
+After looking at several examples of images in the training data, I observed that the brightnesses vary considerably among the images. After some research, I found a way to normalize the brightness of an RGB image. The pipeline for this is as follows:
+
+* convert the original image to HLS space
+* apply histogram equalization on the L channel (this normalizes the luminance, basically)
+* convert the image back to RGB
+* finally, convert it to grayscale 
+
+I decided to use the grayscale image since most traffic signs differ in content and shape, and the color is not usually a deciding factor in deciding which traffic sign is which. Of course, using the full RGB image would have been an option as well.
+
+The same example image after normalization is shown below.
+
+![alt text][after]
+
+## Convolutional Neural Network
+
+The starting point was the LeNet network, and after trying different hyperparameters and architectures, the following structure was chosen:
+
+* Layer 1: Convolutional. Input = 32x32x1. Output = 28x28x16 (16 features)
+* Activation: ReLu
+* Max Pooling. Input = 28x28x16. Output = 14x14x16. 
+* Layer 2: Convolutional. Output = 10x10x32. (32 features)
+* Activation: ReLu
+* Max Pooling. Input = 10x10x32. Output = 5x5x32.
+* Layer 3: Fully Connected. Input = 800. Output = 256.
+* Dropout + Activation (ReLu)
+* Layer 4: Fully Connected. Input = 256. Output = 128.
+* Dropout + Activation.
+* Layer 5: Fully Connected. Input = 128. Output = 43.
+
+The hyperparameters I chose were:
+
+* learning rate : 0.0008
+* epochs : 75 (early stopping if accuracy > 0.95)
+* batch size: 128
+* keep probability in the droput layers : 0.75
+
+The accuracty on the validation data is around 0.95. The accuracy with this network on the test data is 0.926.
+
+## Test the network on 5 new images
+
+The five images I chose are presented below, after being cropped to a 32x32 dimension.
+
+![alt text][img30]
+![alt text][imgyield]
+![alt text][imgpriority]
+![alt text][imgdonotenter]
+![alt text][imgahead]
 
 ###Data Set Summary & Exploration
 
